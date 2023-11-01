@@ -3,13 +3,17 @@ class CalculadoraDeArea implements VisitanteFormaGeometrica {
 
     @Override
     public void visitar(Circulo circulo) {
-        double area = Math.PI * Math.pow(circulo.getRaio(), 2);
+        double raio = circulo.getRaio();
+
+        double area = 3.14159265358979323846 * raio * raio;
         areaTotal += area;
     }
 
     @Override
     public void visitar(Retangulo retangulo) {
-        double area = retangulo.getLargura() * retangulo.getAltura();
+        double largura = retangulo.getLargura();
+        double altura = retangulo.getAltura();
+        double area = largura * altura;
         areaTotal += area;
     }
 
